@@ -11,7 +11,7 @@ function nextSequence() {
   var randomNumber = Math.floor(Math.random() * 4);
   randomChosenColor = buttonColors[randomNumber];
 
-  var audio = new Audio(randomChosenColor+".mp3");
+  var audio = new Audio("sounds/"+randomChosenColor+".mp3");
   gamePattern.push(randomChosenColor);
 
   $("#" + randomChosenColor).fadeOut(50).fadeIn(50);
@@ -22,7 +22,7 @@ function nextSequence() {
 $(".btn").click(function(){
   var userChosenColor = this.id;
   animatePress(this);
-  var buttonSound = new Audio(userChosenColor+".mp3");
+  var buttonSound = new Audio("sounds/"+userChosenColor+".mp3");
   buttonSound.play();
   userClickedPattern.push(userChosenColor);
   checkAnswer(userClickedPattern.lastIndexOf(userChosenColor));
@@ -69,7 +69,7 @@ function checkAnswer(currentLevel){
 // Game over dude
   } else {
     console.log("wrong");
-      var wrongAudio = new Audio("wrong.mp3");
+      var wrongAudio = new Audio("sounds/wrong.mp3");
       wrongAudio.play();
       $("body").addClass("game-over");
       setTimeout(function(){
