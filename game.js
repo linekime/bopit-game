@@ -69,7 +69,7 @@ function checkAnswer(currentLevel){
 // Game over dude
   } else {
     console.log("wrong");
-      var wrongAudio = new Audio(wrong.mp3");
+      var wrongAudio = new Audio("wrong.mp3");
       wrongAudio.play();
       $("body").addClass("game-over");
       setTimeout(function(){
